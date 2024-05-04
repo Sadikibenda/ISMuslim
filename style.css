@@ -367,7 +367,14 @@
 
 
 
-
+	.P-gallery{
+		text-align:center;
+		color:#111;
+		font-size:4.5vw;
+		font-family: 'Sofia Sans', sans-serif;
+		margin-bottom: 1vw;
+		text-transform: uppercase;
+	}
 	
 	.gallery{
 		float:left;
