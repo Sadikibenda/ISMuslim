@@ -29,6 +29,52 @@ $(function(){
 		}
 	});
 
+	//Testimonial Slider
+
+	    const P_testimonials = document.querySelector('.Testimonial');
+		const img = document.querySelector('.img');
+		const name = document.querySelector('.name');
+		const title = document.querySelector('.title');
+
+		let index = 0;
+
+		const testimonials = [
+			{
+				img: 'images/ismail.jpg',
+				name: 'Ismail Desire',
+				title: 'Secretary General',
+				P_testimonials: '“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”'
+			},
+			{
+				img: 'images/sheikh zubeir.jpeg',
+				name: 'Sheikh Zubeir',
+				title: 'President\'s Assistant',
+				P_testimonials: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”'
+			},
+			{
+				img: 'images/mama natasha.avif',
+				name: 'Mama Natasha',
+				title: 'Treasurer',
+				P_testimonials: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”'
+			},
+		];
+
+		function updateTestimonial() {
+
+			const { img: image, name: Name, title: Title, P_testimonials: p_testimonials } = testimonials[index];
+			img.src = image;
+			name.innerHTML = Name;
+			title.innerHTML = Title;
+			P_testimonials.innerHTML = p_testimonials;
+
+			index++;
+			if (index > testimonials.length - 1) {
+				index = 0;
+			}
+		}
+
+		setInterval(updateTestimonial, 5000); // 5 seconds
+
 
 	var bxslider = $('.bxslider').bxSlider({
 		mode: 'horizontal',
