@@ -673,7 +673,40 @@
 	}
 	/* CONTACT */
 
+	.subscription-container {
+		background-image: url('images/donation.avif');
+		background-repeat: no-repeat;
+		background-attachment: fixed; 
+		background-size: 100% 100%;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		text-align: center;
+		margin: 20px auto;
+		width: 80%;
+		
+	}
+	.subscription-container h2 {
+		font-size: 24px;
+		margin: 10px 0 20px 0;
+	}
 
+	.subscription-container button {
+		padding: 10px 20px;
+		font-size: 16px;
+		color: white;
+		background-color: rgb(34, 194, 34);
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		margin-top: 15px;
+		transition: .3s;
+	}
+
+	.subscription-container button:hover {
+		background-color: rgb(101, 250, 101);
+		color: #000;
+	}
 
 
 	footer{

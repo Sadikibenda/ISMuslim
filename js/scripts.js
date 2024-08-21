@@ -43,19 +43,19 @@ $(function(){
 				img: 'images/ismail.jpg',
 				name: 'Ismail Desire',
 				title: 'Secretary General',
-				P_testimonials: '“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”'
+				P_testimonials: '“ Responsibilities include administration, coordination, and communication within the community, as well as event planning and ensuring compliance with legal requirements. ”'
 			},
 			{
 				img: 'images/sheikh zubeir.jpeg',
 				name: 'Sheikh Zubeir',
 				title: 'President\'s Assistant',
-				P_testimonials: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”'
+				P_testimonials: '“Executive assistant to the president, has many responsibilities, including Responsible for providing comprehensive support to the President, serving as a liaison to the Board of Trustees, and many more. ”'
 			},
 			{
 				img: 'images/mama natasha.avif',
 				name: 'Mama Natasha',
 				title: 'Treasurer',
-				P_testimonials: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”'
+				P_testimonials: '“ Our financial controller manages various financial aspects of this community, including cash management, risk management, investment activities, and financial planning. ”'
 			},
 		];
 
@@ -74,6 +74,29 @@ $(function(){
 		}
 
 		setInterval(updateTestimonial, 5000); // 5 seconds
+
+	//End of Testimonial Slider
+
+	//Stripe Payment
+
+	const stripe = Stripe('pk_live_51Ppz1gIrtSJvy7VBYGsgysyFSvm03fcn4p7Ygh8qd0wEYsNpdFl5y2XQf6Wia2siY4LvCe1EXWash0qiN9w63NER00IGkBNTNp');
+
+	document.getElementById('checkout-button').addEventListener('click', function() {
+		stripe.redirectToCheckout({
+			lineItems: [{
+				price: 'price_1PpzeqIrtSJvy7VBoaBMDqt4', // Replace with the Price ID you retrieved
+				quantity: 1,
+			}],
+			mode: 'subscription',
+			successUrl: window.location.origin + '/success.html',
+			cancelUrl: window.location.origin + '/cancel.html',
+		}).then(function (result) {
+			if (result.error) {
+				alert(result.error.message);
+			}
+		});
+	});
+
 
 
 	var bxslider = $('.bxslider').bxSlider({
