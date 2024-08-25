@@ -295,6 +295,21 @@
 		font-size:15px;
 		margin: 0 0 0 5px;
 	}
+
+	.container-s{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	footer .container{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.donor{
+		margin-top: 15px;
+	}
 }
 
 
@@ -338,4 +353,6 @@
 		font-size:13px;
 		padding: 9px 15px;
 	}
+
+	
 }
